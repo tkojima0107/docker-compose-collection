@@ -1,0 +1,14 @@
+version: '3'
+services:
+  cgra-flow-gui:
+    image: cgra/cgra-flow:demo
+    container_name: "cgra-flow"
+    tty: true
+    stdin_open: true
+    network_mode: "host"
+    volumes:
+      - /tmp/.X11-unix:/tmp/.X11-unix 
+      - ~/.Xauthority:/root/.Xauthority
+    environment:
+      - DISPLAY
+

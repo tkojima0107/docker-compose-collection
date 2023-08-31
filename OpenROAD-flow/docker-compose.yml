@@ -1,0 +1,20 @@
+version: "3.4"
+
+services:
+  openroad-flow:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: "openroad"
+    volumes:
+      - /tmp/.X11-unix:/tmp/.X11-unix
+      - /usr/share/X11/xkb:/usr/share/X11/xkb:ro
+      - ~/.Xauthority:/root/.Xauthority
+    network_mode: "host"
+    entrypoint: /bin/bash
+    tty: true
+    stdin_open: true
+    environment:
+      - DISPLAY
+      - QT_XKB_CONFIG_ROOT=/usr/share/X11/xkb
+      - XDG_RUNTIME_DIR=$XDG_RUNTIME_DIR
