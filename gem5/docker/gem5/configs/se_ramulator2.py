@@ -32,7 +32,7 @@ system.system_port = system.membus.cpu_side_ports
 system.mem_ctrl = Ramulator2()
 ramulator2_conf_name = "gem5_example_config.yaml"
 system.mem_ctrl.config_path = f"{gem5_dir}/ext/ramulator2/ramulator2/{ramulator2_conf_name}"
-print("ramulator2 instantiated with {}".format(system.mem_ctrl.configFile))
+print("ramulator2 instantiated with {}".format(system.mem_ctrl.config_path))
 system.mem_ctrl.port = system.membus.mem_side_ports
 
 binary = f"{gem5_dir}/tests/test-progs/hello/bin/x86/linux/hello"

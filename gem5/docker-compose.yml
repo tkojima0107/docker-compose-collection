@@ -4,8 +4,8 @@ services:
   gem5_sim:
     image: gem5:${GEM5_VERSION:-v24.0.0.1}_${ISA:-X86}
     build:
-      context: ./docker/gem5
-      dockerfile: Dockerfile
+      context: ./docker/gem5/
+      dockerfile: ./Dockerfile
       args:
         - GEM5_VERSION=${GEM5_VERSION:-v24.0.0.1}
         - BUILD_ISA=${ISA:-X86}
@@ -21,10 +21,10 @@ services:
   riscv_devel:
     image: riscv_devel
     build:
-      context: ./docker/riscv_devel
-      dockerfile: Dockerfile
+      context: ./docker/riscv_devel/
+      dockerfile: ./Dockerfile
       args:
-        - RELEASE_VERSION=2024.09.03
+        - RELEASE_VERSION
     container_name: riscv_dev_container
     volumes:
       - ./work:/work

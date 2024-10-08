@@ -21,4 +21,7 @@ RUN apt update && \
 
 ENV PATH="/opt/riscv/bin:${PATH}"
 
-ENTRYPOINT ["/bin/bash"]
+WORKDIR /work
+
+COPY ./entrypoint.sh /entrypoint.sh
+ENTRYPOINT ["/bin/bash", "/entrypoint.sh"]

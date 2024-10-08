@@ -52,7 +52,8 @@ RUN if [ ${ENABLE_DRAMSIM3} -eq 1 ]; then \
 	scons build/${BUILD_ISA}/gem5.opt -j$(nproc) && \
 	rm -f /tmp/*
 
-ENTRYPOINT ["sleep", "infinity"]
+COPY ./entrypoint.sh /entrypoint.sh
+ENTRYPOINT ["/bin/bash", "/entrypoint.sh"]
 
 
 
