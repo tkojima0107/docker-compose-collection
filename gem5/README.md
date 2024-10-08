@@ -1,10 +1,14 @@
 ## Gem5 simulation environment with some external tools enabled
 
-1. Clone the repository
-2. Preparing the Docker images
+### 1. Clone the repository
+```
+git clone https://github.com/tkojima0107/docker-compose-collection.git
+```
+
+### 2. Preparing the Docker images
 There are two options to build the Docker images. The first option is to build the Docker images on your own. The second option is to pull the pre-built Docker images from Docker Hub.
 
-## Option 1: Build the Docker images on your own
+**Option 1: Build the Docker images on your own**
 
 Just run the following command to build the Docker image.
 ```
@@ -28,7 +32,7 @@ ISA=RISCV docker-compose --profile riscv_devel build
 
 Please check gem5 repository for the available versions (tags).
 
-## Option 2: Pull the pre-built Docker images from Docker Hub
+**Option 2: Pull the pre-built Docker images from Docker Hub**
 Depending on the build configuration explained in the previous section,
 you can pull the pre-built Docker images from Docker Hub.
 ```
@@ -50,12 +54,12 @@ For the RISC-V cross compiling environment, you have to tag the images as follow
 docker tag tkojima0107/riscv_devel:latest riscv_devel:latest
 ```
 
-3. Docker container run
+### 3. Docker container run
 ```
 [ISA=xxx] [GEM5_VERSION=xxx] docker-compose [--profile riscv_devel] up -d
 ```
 
-4. Docker container attach
+### 4. Docker container attach
 ```
 docker exec -it gem5_sim_container /bin/bash
 ```
@@ -65,7 +69,7 @@ Similary, you can attach to the RISC-V cross compiling environment by running th
 docker exec -it gem5_sim_container_riscv /bin/bash
 ```
 
-5. Example of running gem5 simulation
+### 5. Example of running gem5 simulation
 ```
 cd /work
 # for DRAMSim3
@@ -85,7 +89,6 @@ In the RISC-V cross compiling environment,
 ```
 riscv64-unknown-elf-gcc -static -o hello hello.c
 ```
-
 
 ### Visualize DRAMSim3 output
 ```
