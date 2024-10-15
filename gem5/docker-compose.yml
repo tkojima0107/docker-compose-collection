@@ -12,6 +12,7 @@ services:
         - ENABLE_DRAMSIM3=${ENABLE_DRAMSIM3:-1}
         - ENABLE_RAMULATOR=${ENABLE_RAMULATOR:-1}
     container_name: gem5_sim_container
+    hostname: gem5_sim
     volumes:
       - ./work:/work
     tty: true
@@ -26,6 +27,7 @@ services:
       args:
         - RELEASE_VERSION=${RVTOOL_VERSION:-2023.10.12}
     container_name: riscv_dev_container
+    hostname: riscv_dev
     volumes:
       - ./work:/work
     tty: true
