@@ -10,6 +10,7 @@ services:
       - ${XILINX_PATH:-/tools/Xilinx}:/tools/Xilinx
     environment:
       - VITIS_VERSION=2023.2
+      - LM_LICENSE_FILE=${LM_LICENSE_FILE:-/opt/Xilinx.lic}
     devices:
       - /dev/accel:/dev/accel
     tty: true
