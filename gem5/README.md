@@ -42,7 +42,7 @@ All of the pre-built Docker images are enabled with DRAMSim3 and Ramulator2.
 
 If you want to pull the pre-built Docker images for RISC-V cross compiling environment, you can run the following command.
 ```
-docker pull tkojima0107/riscv_devel:latest
+docker pull tkojima0107/riscv_devel:2023.10.12
 ```
 
 After pulling the pre-built Docker images, you have to tag the images as follows to work with the docker-compose.
@@ -66,7 +66,7 @@ docker exec -it gem5_sim_container /bin/bash
 
 Similary, you can attach to the RISC-V cross compiling environment by running the following command.
 ```
-docker exec -it gem5_sim_container_riscv /bin/bash
+docker exec -it riscv_dev_container /bin/bash
 ```
 
 ### 5. Example of running gem5 simulation
