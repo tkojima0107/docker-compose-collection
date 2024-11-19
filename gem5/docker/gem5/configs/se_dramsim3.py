@@ -13,7 +13,7 @@ system.clk_domain.clock = '1GHz'
 system.clk_domain.voltage_domain = VoltageDomain()
 
 system.mem_mode = 'timing'
-system.mem_ranges = [AddrRange('512MB')]
+system.mem_ranges = [AddrRange('1GiB')]
 
 system.cpu = X86TimingSimpleCPU()
 

@@ -4,7 +4,7 @@ services:
     build:
       context: .
       dockerfile: ./Dockerfile
-    container_name: aie_devel_container
+    container_name: aie_devel_container_${USER}
     volumes:
       - /opt/xilinx/xrt:/opt/xilinx/xrt
       - ${XILINX_PATH:-/tools/Xilinx}:/tools/Xilinx
