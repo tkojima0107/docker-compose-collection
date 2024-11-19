@@ -1,0 +1,19 @@
+services:
+  aie-devel:
+    image: ryzen-ai-mlir-aie
+    build:
+      context: .
+      dockerfile: ./Dockerfile
+    container_name: aie_devel_container
+    volumes:
+      - /opt/xilinx/xrt:/opt/xilinx/xrt
+      - ${XILINX_PATH:-/tools/Xilinx}:/tools/Xilinx
+    environment:
+      - VITIS_VERSION=2023.2
+    devices:
+      - /dev/accel:/dev/accel
+    tty: true
+    stdin_open: true
+    ulimits:
+      memlock: -1
+    command: /bin/bash
